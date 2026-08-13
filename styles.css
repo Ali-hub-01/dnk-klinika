@@ -51,7 +51,7 @@ h1{ font-size:clamp(1.9rem,5.2vw,3.6rem); }
 h2{ font-size:clamp(1.5rem,3.6vw,2.4rem); }
 h3{ font-size:clamp(1.05rem,2.2vw,1.35rem); }
 
-.container{ width:min(1200px,100% - 40px); margin-inline:auto; }
+.container{ width:min(1200px,100% - clamp(36px,7vw,96px)); margin-inline:auto; }
 .section{ padding:clamp(64px,9vw,120px) 0; }
 .section--dark{ background:var(--navy); color:var(--white); }
 .section--dark .sec-head p{ color:rgba(255,255,255,.72); }
@@ -202,7 +202,7 @@ body.menu-locked{ overflow:hidden; }
   position:absolute; inset:0; z-index:-1; width:100%; height:100%;
   pointer-events:none;
 }
-.hero__in{ position:relative; width:100%; padding:calc(var(--header-h) + 48px) 0 clamp(56px,8vh,96px); }
+.hero__in{ position:relative; padding:calc(var(--header-h) + 48px) 0 clamp(56px,8vh,96px); }
 .hero__kicker{
   display:inline-flex; align-items:center; gap:10px;
   font-size:.78rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase;
@@ -408,9 +408,17 @@ body.menu-locked{ overflow:hidden; }
 /* ---------- отзывы-скрины (рельс) ---------- */
 .reviews-rail{
   display:flex; gap:16px; overflow-x:auto; padding:8px 4px 22px;
+  justify-content:safe center;
   scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
   scrollbar-width:thin; scrollbar-color:var(--teal) transparent;
 }
+.reviews-rail .review-shot{ height:clamp(320px,34vw,420px); flex:0 0 auto; width:auto; background:transparent; }
+.reviews-rail .review-shot img{ width:auto; height:100%; object-fit:contain; }
+/* заголовок над отзывами */
+.reviews-head{ text-align:center; margin:clamp(44px,6vw,72px) 0 22px; }
+.reviews-head .kicker{ justify-content:center; }
+.reviews-head .kicker::before{ display:none; }
+.reviews-head h3{ font-size:clamp(1.25rem,2.4vw,1.7rem); margin-top:8px; font-weight:800; }
 .reviews-rail::-webkit-scrollbar{ height:6px; }
 .reviews-rail::-webkit-scrollbar-thumb{ background:var(--teal); border-radius:3px; }
 .review-shot{
@@ -420,7 +428,10 @@ body.menu-locked{ overflow:hidden; }
   transition:transform .3s, box-shadow .3s; cursor:zoom-in;
 }
 .review-shot:hover{ transform:translateY(-5px); box-shadow:var(--shadow-card); }
-.review-shot img{ width:100%; height:auto; }
+.review-shot img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+/* видео + отзыв в одном ряду — одинаковая высота, по центру */
+.clip-rail{ justify-content:center; align-items:stretch; }
+.clip-rail .review-shot{ aspect-ratio:3/4; align-self:stretch; }
 .reviews-note{ display:flex; align-items:center; gap:10px; color:var(--muted); font-size:.88rem; font-weight:600; margin-top:6px; }
 .reviews-note svg{ width:18px; height:18px; color:var(--teal); flex:none; }
 .section--dark .review-shot{ border-color:var(--line-inv); }
@@ -578,3 +589,7 @@ body.menu-locked{ overflow:hidden; }
   .rv{ opacity:1; transform:none; }
   .dna-motif{ animation:none; }
 }
+
+/* заметка-дисклеймер под описанием процедуры/направления */
+.proc__note{ margin-top:18px; font-size:.85rem; color:var(--muted); max-width:56ch; }
+.section--dark .proc__note{ color:rgba(255,255,255,.55); }
