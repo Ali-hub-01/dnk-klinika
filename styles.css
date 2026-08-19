@@ -475,6 +475,16 @@ body.menu-locked{ overflow:hidden; }
 .contact-list small{ display:block; font-size:.78rem; color:rgba(255,255,255,.55); font-weight:600; }
 .contact-list b{ font-size:1.02rem; color:#fff; font-weight:700; }
 
+/* Instagram-кластер (footer + блок контактов) */
+.footer__contacts li.footer__ig{ align-items:flex-start; }
+.footer__ig .footer__ig-list{ display:flex; flex-direction:column; gap:7px; }
+.footer__ig .footer__ig-list a{ display:block; }
+.contact-list li > span.contact-igs{ align-items:flex-start; }
+.contact-list .contact-igs > span{ display:flex; flex-direction:column; gap:4px; }
+.contact-list .contact-igs > span > small{ margin-bottom:2px; }
+.contact-list .contact-igs a{ display:block; padding:2px 0; font-weight:600; font-size:.97rem; color:#fff; }
+.contact-list .contact-igs a:hover{ background:transparent; color:var(--teal-bright); }
+
 .form-card{
   background:var(--white); color:var(--ink);
   border-radius:var(--r-lg); padding:clamp(28px,4vw,44px);
