@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ali-hub-01.github.io/dnk-klinika/index.html</loc><priority>1.0</priority></url>
-  <url><loc>https://ali-hub-01.github.io/dnk-klinika/kosmetologiya.html</loc><priority>0.9</priority></url>
-  <url><loc>https://ali-hub-01.github.io/dnk-klinika/trihologiya.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ali-hub-01.github.io/dnk-klinika/uvelichenie.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ali-hub-01.github.io/dnk-klinika/kapelnicy.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ali-hub-01.github.io/dnk-klinika/pohudenie.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ali-hub-01.github.io/dnk-klinika/blefaroplastika.html</loc><priority>0.8</priority></url>
-  <url><loc>https://ali-hub-01.github.io/dnk-klinika/akademiya.html</loc><priority>0.7</priority></url>
-  <url><loc>https://ali-hub-01.github.io/dnk-klinika/obuchenie.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dnk.dnk-klinika.kz/index.html</loc><lastmod>2026-08-19</lastmod><priority>1.0</priority></url>
+  <url><loc>https://dnk.dnk-klinika.kz/kosmetologiya.html</loc><lastmod>2026-08-19</lastmod><priority>0.9</priority></url>
+  <url><loc>https://dnk.dnk-klinika.kz/trihologiya.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://dnk.dnk-klinika.kz/uvelichenie.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://dnk.dnk-klinika.kz/kapelnicy.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://dnk.dnk-klinika.kz/pohudenie.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://dnk.dnk-klinika.kz/blefaroplastika.html</loc><lastmod>2026-08-19</lastmod><priority>0.8</priority></url>
+  <url><loc>https://dnk.dnk-klinika.kz/akademiya.html</loc><lastmod>2026-08-19</lastmod><priority>0.7</priority></url>
+  <url><loc>https://dnk.dnk-klinika.kz/obuchenie.html</loc><lastmod>2026-08-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ali-hub-01.github.io/dnk-klinika/sitemap.xml
+Sitemap: https://dnk.dnk-klinika.kz/sitemap.xml
