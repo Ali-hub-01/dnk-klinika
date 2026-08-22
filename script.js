@@ -267,19 +267,42 @@
   });
 
   /* ============================================================
-     Чистые обработчики конверсий (позже сюда повесят gtag)
+     Google Ads конверсии (AW-11219341786)
      ============================================================ */
-  function onLeadSubmit(form, service) {
-    /* gtag placeholder: событие "form_submit" */
-  }
-  function onPhoneClick(href) {
-    /* gtag placeholder: событие "phone_click" */
-  }
-  function onWhatsAppClick(href) {
-    /* gtag placeholder: событие "whatsapp_click" */
+  /* Анти-бот: считаем только реального пользователя (боты кликают без человеческих жестов) */
+  var humanSeen = false;
+  ['pointermove', 'pointerdown', 'touchstart', 'scroll', 'keydown', 'wheel'].forEach(function (ev) {
+    window.addEventListener(ev, function () { humanSeen = true; }, { once: true, passive: true });
+  });
+  function isLikelyBot() {
+    return !!navigator.webdriver || !humanSeen;
   }
 
+  /* Маппинг событие → конверсия. Дедуп: 1 раз за сессию. Только для людей. */
+  var CONVERSIONS = {
+    form_submit:    'AW-11219341786/ihEBCMiL9uUcENqj5uUp', // Отправка формы для потенциальных клиентов
+    phone_click:    'AW-11219341786/5etfCP-m5-UcENqj5uUp', // Интерактивные номера телефонов
+    whatsapp_click: 'AW-11219341786/F-GNCMCs5-UcENqj5uUp'  // Контакт (WhatsApp)
+  };
+  function fireConversion(eventName) {
+    var sendTo = CONVERSIONS[eventName];
+    if (!sendTo) return;
+    if (typeof gtag !== 'function') return;
+    if (isLikelyBot()) return;
+    try {
+      var k = 'dnk_conv_' + eventName;
+      if (sessionStorage.getItem(k)) return;   // уже отправляли в этой сессии
+      sessionStorage.setItem(k, '1');
+    } catch (e) { /* приватный режим — просто отправим один раз без памяти */ }
+    gtag('event', 'conversion', { 'send_to': sendTo, 'value': 1.0, 'currency': 'USD' });
+  }
+
+  function onLeadSubmit(form, service) { fireConversion('form_submit'); }
+  function onPhoneClick(href) { fireConversion('phone_click'); }
+  function onWhatsAppClick(href) { fireConversion('whatsapp_click'); }
+
   document.addEventListener('click', function (e) {
+    if (!e.isTrusted) return;                  // синтетический клик бота — игнор
     var a = e.target.closest('a[href]');
     if (!a) return;
     var href = a.getAttribute('href');
