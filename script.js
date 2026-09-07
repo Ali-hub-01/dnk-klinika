@@ -6,7 +6,7 @@
   'use strict';
 
   var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var WA_PHONE = '77471740344';
+  var WA_PHONE = '77056763067';
 
   /* ---------------- Шапка: фон при скролле ---------------- */
   var header = document.querySelector('.header');
