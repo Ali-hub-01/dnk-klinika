@@ -62,7 +62,12 @@
   fab.type = 'button';
   fab.className = 'promo-fab';
   fab.setAttribute('aria-haspopup', 'dialog');
-  fab.innerHTML = '<span class="promo-fab__ico" aria-hidden="true">🎁</span><span>Акции</span>';
+  fab.innerHTML =
+    '<span class="promo-fab__ring" aria-hidden="true"></span>' +
+    '<span class="promo-fab__ring promo-fab__ring--2" aria-hidden="true"></span>' +
+    '<span class="promo-fab__ico" aria-hidden="true">🎁</span>' +
+    '<span class="promo-fab__txt">Акции <b>-40%</b></span>' +
+    '<span class="promo-fab__dot" aria-hidden="true"></span>';
 
   document.body.appendChild(ovl);
   document.body.appendChild(fab);
